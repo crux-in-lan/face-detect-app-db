@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.14
 -- Dumped by pg_dump version 9.5.14
 
--- Started on 2019-04-14 10:28:33 EEST
+-- Started on 2019-04-14 10:53:54 EEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22,7 +22,7 @@ SET default_with_oids = false;
 
 --
 -- TOC entry 336 (class 1259 OID 17044)
--- Name: login; Type: TABLE; Schema: tmp; Owner: nvasilev
+-- Name: login; Type: TABLE; Schema: tmp; Owner: example_user
 --
 
 CREATE TABLE tmp.login (
@@ -32,11 +32,11 @@ CREATE TABLE tmp.login (
 );
 
 
-ALTER TABLE tmp.login OWNER TO nvasilev;
+ALTER TABLE tmp.login OWNER TO example_user;
 
 --
 -- TOC entry 335 (class 1259 OID 17042)
--- Name: login_id_seq; Type: SEQUENCE; Schema: tmp; Owner: nvasilev
+-- Name: login_id_seq; Type: SEQUENCE; Schema: tmp; Owner: example_user
 --
 
 CREATE SEQUENCE tmp.login_id_seq
@@ -47,12 +47,12 @@ CREATE SEQUENCE tmp.login_id_seq
     CACHE 1;
 
 
-ALTER TABLE tmp.login_id_seq OWNER TO nvasilev;
+ALTER TABLE tmp.login_id_seq OWNER TO example_user;
 
 --
 -- TOC entry 2591 (class 0 OID 0)
 -- Dependencies: 335
--- Name: login_id_seq; Type: SEQUENCE OWNED BY; Schema: tmp; Owner: nvasilev
+-- Name: login_id_seq; Type: SEQUENCE OWNED BY; Schema: tmp; Owner: example_user
 --
 
 ALTER SEQUENCE tmp.login_id_seq OWNED BY tmp.login.id;
@@ -60,7 +60,7 @@ ALTER SEQUENCE tmp.login_id_seq OWNED BY tmp.login.id;
 
 --
 -- TOC entry 2467 (class 2604 OID 17047)
--- Name: id; Type: DEFAULT; Schema: tmp; Owner: nvasilev
+-- Name: id; Type: DEFAULT; Schema: tmp; Owner: example_user
 --
 
 ALTER TABLE ONLY tmp.login ALTER COLUMN id SET DEFAULT nextval('tmp.login_id_seq'::regclass);
@@ -69,7 +69,7 @@ ALTER TABLE ONLY tmp.login ALTER COLUMN id SET DEFAULT nextval('tmp.login_id_seq
 --
 -- TOC entry 2585 (class 0 OID 17044)
 -- Dependencies: 336
--- Data for Name: login; Type: TABLE DATA; Schema: tmp; Owner: nvasilev
+-- Data for Name: login; Type: TABLE DATA; Schema: tmp; Owner: example_user
 --
 
 COPY tmp.login (id, hash, email) FROM stdin;
@@ -85,7 +85,7 @@ COPY tmp.login (id, hash, email) FROM stdin;
 --
 -- TOC entry 2592 (class 0 OID 0)
 -- Dependencies: 335
--- Name: login_id_seq; Type: SEQUENCE SET; Schema: tmp; Owner: nvasilev
+-- Name: login_id_seq; Type: SEQUENCE SET; Schema: tmp; Owner: example_user
 --
 
 SELECT pg_catalog.setval('tmp.login_id_seq', 27, true);
@@ -93,14 +93,14 @@ SELECT pg_catalog.setval('tmp.login_id_seq', 27, true);
 
 --
 -- TOC entry 2469 (class 2606 OID 17052)
--- Name: login_pkey; Type: CONSTRAINT; Schema: tmp; Owner: nvasilev
+-- Name: login_pkey; Type: CONSTRAINT; Schema: tmp; Owner: example_user
 --
 
 ALTER TABLE ONLY tmp.login
     ADD CONSTRAINT login_pkey PRIMARY KEY (id);
 
 
--- Completed on 2019-04-14 10:28:33 EEST
+-- Completed on 2019-04-14 10:53:54 EEST
 
 --
 -- PostgreSQL database dump complete
